@@ -1,18 +1,20 @@
-name: Cypress Tests
+name: Run Tests
 
 on: [push]
 
 jobs:
-  cypress-run:
+  run-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Run E2E tests
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run serve
-          unit: npm run test:unit
+
+      - name: Run unit tests 
+        run: npm run test:unit
