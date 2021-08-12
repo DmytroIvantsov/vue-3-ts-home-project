@@ -6,6 +6,10 @@
   <router-view />
 </template>
 
+<style>
+@import "https://bootswatch.com/5/flatly/bootstrap.min.css";
+</style>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
